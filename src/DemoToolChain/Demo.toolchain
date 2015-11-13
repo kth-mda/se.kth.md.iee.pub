@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oslc4j_tc:Toolchain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oslc4j_tc="http://org.eclipse.lyo/oslc4j/toolChain">
+  <adaptorInterfaces name="Bugzilla">
+    <serviceProviderCatelog title="Service Provider Catelog">
+      <serviceProviders title="Service Provider">
+        <services>
+          <creationFactories title="CreationFactory1" resourceTypes="//@specification/@domainSpecifications.3/@resources.0"/>
+          <queryCapabilities title="QueryCapability1" resourceTypes="//@specification/@domainSpecifications.3/@resources.0"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.3/@resources.0"/>
+        </services>
+      </serviceProviders>
+    </serviceProviderCatelog>
+    <requiredAdaptors xsi:type="oslc4j_tc:GenericRequiredAdaptor" name="GenericRequiredAdaptor"/>
+  </adaptorInterfaces>
+  <adaptorInterfaces name="Doors">
+    <serviceProviderCatelog title="Service Provider Catelog">
+      <serviceProviders title="Service Provider">
+        <services>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.4/@resources.1 //@specification/@domainSpecifications.4/@resources.0"/>
+        </services>
+      </serviceProviders>
+    </serviceProviderCatelog>
+    <requiredAdaptors xsi:type="oslc4j_tc:GenericRequiredAdaptor" name="GenericRequiredAdaptor" servicedResources="//@specification/@domainSpecifications.3/@resources.0"/>
+  </adaptorInterfaces>
+  <adaptorInterfaces name="PTC Integrity">
+    <serviceProviderCatelog title="Service Provider Catelog">
+      <serviceProviders title="Service Provider">
+        <services>
+          <queryCapabilities title="QueryCapability1" resourceTypes="//@specification/@domainSpecifications.0/@resources.1 //@specification/@domainSpecifications.0/@resources.2 //@specification/@domainSpecifications.0/@resources.0"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.2 //@specification/@domainSpecifications.0/@resources.0 //@specification/@domainSpecifications.0/@resources.1"/>
+        </services>
+      </serviceProviders>
+    </serviceProviderCatelog>
+    <requiredAdaptors xsi:type="oslc4j_tc:GenericRequiredAdaptor" name="GenericRequiredAdaptor" servicedResources="//@specification/@domainSpecifications.3/@resources.0"/>
+  </adaptorInterfaces>
+  <specification>
+    <domainSpecifications name="Quality Management" namespaceURI="http://open-services.net/ns/qm#" namespacePrefix="//@specification/@domainPrefixes.0">
+      <resources name="Test Plan" resourceProperties="//@specification/@domainSpecifications.1/@resourceProperties.0 //@specification/@domainSpecifications.1/@resourceProperties.3 //@specification/@domainSpecifications.1/@resourceProperties.2 //@specification/@domainSpecifications.1/@resourceProperties.1 //@specification/@domainSpecifications.1/@resourceProperties.4 //@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.1 //@specification/@domainSpecifications.0/@resourceProperties.2 //@specification/@domainSpecifications.1/@resourceProperties.5 //@specification/@domainSpecifications.1/@resourceProperties.7 //@specification/@domainSpecifications.1/@resourceProperties.8 //@specification/@domainSpecifications.5/@resourceProperties.1 //@specification/@domainSpecifications.5/@resourceProperties.0"/>
+      <resources name="Test Result" resourceProperties="//@specification/@domainSpecifications.1/@resourceProperties.3 //@specification/@domainSpecifications.1/@resourceProperties.4 //@specification/@domainSpecifications.0/@resourceProperties.9 //@specification/@domainSpecifications.0/@resourceProperties.10 //@specification/@domainSpecifications.0/@resourceProperties.11 //@specification/@domainSpecifications.0/@resourceProperties.12 //@specification/@domainSpecifications.0/@resourceProperties.13 //@specification/@domainSpecifications.0/@resourceProperties.7"/>
+      <resources name="Test Case" resourceProperties="//@specification/@domainSpecifications.1/@resourceProperties.0 //@specification/@domainSpecifications.1/@resourceProperties.3 //@specification/@domainSpecifications.1/@resourceProperties.1 //@specification/@domainSpecifications.1/@resourceProperties.2 //@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.3 //@specification/@domainSpecifications.0/@resourceProperties.4 //@specification/@domainSpecifications.0/@resourceProperties.5 //@specification/@domainSpecifications.0/@resourceProperties.2"/>
+      <resources name="Test Script" resourceProperties="//@specification/@domainSpecifications.1/@resourceProperties.0 //@specification/@domainSpecifications.1/@resourceProperties.3 //@specification/@domainSpecifications.1/@resourceProperties.1 //@specification/@domainSpecifications.1/@resourceProperties.2 //@specification/@domainSpecifications.1/@resourceProperties.4 //@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.5"/>
+      <resources name="Test Execution Record" resourceProperties="//@specification/@domainSpecifications.1/@resourceProperties.0 //@specification/@domainSpecifications.1/@resourceProperties.1 //@specification/@domainSpecifications.1/@resourceProperties.2 //@specification/@domainSpecifications.1/@resourceProperties.3 //@specification/@domainSpecifications.1/@resourceProperties.4 //@specification/@domainSpecifications.0/@resourceProperties.6 //@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.7 //@specification/@domainSpecifications.0/@resourceProperties.8"/>
+      <resourceProperties name="relatedChangeRequest" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.3/@resources.0"/>
+      <resourceProperties name="usesTest Case" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.2"/>
+      <resourceProperties name="validatesRequirementCollection" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.4/@resources.0" description="Requirement Collection that is validated by the Test Plan. It is likely that the target resource will be an oslc_rm:RequirementCollection but that is not necessarily the case."/>
+      <resourceProperties name="testsChangeRequest" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.3/@resources.0" description="Change Request tested by the Test Case. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case. "/>
+      <resourceProperties name="usesTestScript" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.3" description="Test Script used by the Test Case. It is likely that the target resource will be an oslc_qm:TestScript but that is not necessarily the case. "/>
+      <resourceProperties name="validatesRequirement" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.4/@resources.1" description="Requirement that is validated by the Test Case. It is likely that the target resource will be an oslc_rm:Requirement but that is not necessarily the case. "/>
+      <resourceProperties name="blockedByChangeRequest" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.3/@resources.0" description="Change Request that prevents execution of the Test Execution Record. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case. "/>
+      <resourceProperties name="reportsOnTestPlan" occurs="zeroOrOne" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.0" description="Test Plan that the Test Execution Record reports on. It is likely that the target resource will be an oslc_qm:TestPlan but that is not necessarily the case. "/>
+      <resourceProperties name="runsTestCase" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.2" description="Test Case run by the Test Execution Record. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case. "/>
+      <resourceProperties name="status" occurs="zeroOrOne" valueType="String" description="Used to indicate the state of the Test Result based on values defined by the service provider. Most often a read-only property. "/>
+      <resourceProperties name="affectedByChangeRequest" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.3/@resources.0" description="Change request that affects the Test Result. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case. "/>
+      <resourceProperties name="executesTestScript" occurs="zeroOrOne" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.3" description="Test Script executed to produce the Test Result. It is likely that the target resource will be an oslc_qm:TestScript but that is not necessarily the case. "/>
+      <resourceProperties name="producedByTestExecutionRecord" occurs="zeroOrOne" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.4" description="Test Execution Record that the Test Result was produced by. It is likely that the target resource will be an oslc_qm:TestExecutionRecord but that is not necessarily the case. "/>
+      <resourceProperties name="reportsOnTestCase" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.2" description="Test Case that the Test Result reports on. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case. "/>
+    </domainSpecifications>
+    <domainSpecifications name="Dublin Core" namespaceURI="http://purl.org/dc/terms/" namespacePrefix="//@specification/@domainPrefixes.1">
+      <resourceProperties name="contributor" valueType="Resource" representation="either" range="//@specification/@domainSpecifications.2/@resources.0" description="Contributor or contributors to the resource. It is likely that the target resource will be a foaf:Person but that is not necessarily the case. "/>
+      <resourceProperties name="creator" valueType="Resource" representation="either" range="//@specification/@domainSpecifications.2/@resources.0" description="Creator or creators of the resource. It is likely that the target resource will be a foaf:Person but that is not necessarily the case. "/>
+      <resourceProperties name="description" valueType="XMLLiteral" description="Descriptive text about resource represented as rich text in XHTML content. SHOULD include only content that is valid and suitable inside an XHTML &lt;div> element."/>
+      <resourceProperties name="created" valueType="DateTime" description="Timestamp of resource creation "/>
+      <resourceProperties name="identifier" valueType="String" description="A unique identifier for a resource. Typically read-only and assigned by the service provider when a resource is created. Not typically intended for end-user display. "/>
+      <resourceProperties name="modified" valueType="DateTime" description="Timestamp of latest resource modification "/>
+      <resourceProperties name="relation" valueType="Resource" description="Relation which identifies a related resource"/>
+      <resourceProperties name="subject" valueType="String" description="Tag or keyword for a resource. Each occurrence of a dcterms:subject property denotes an additional tag for the resource. "/>
+      <resourceProperties name="title" valueType="XMLLiteral" description="itle of the resource represented as rich text in XHTML content. SHOULD include only content that is valid inside an XHTML &lt;span> element. "/>
+    </domainSpecifications>
+    <domainSpecifications name="FOAF" namespaceURI="http://xmlns.com/foaf/0.1/" namespacePrefix="//@specification/@domainPrefixes.2">
+      <resources name="Person" resourceProperties="//@specification/@domainSpecifications.2/@resourceProperties.0 //@specification/@domainSpecifications.2/@resourceProperties.1 //@specification/@domainSpecifications.2/@resourceProperties.2"/>
+      <resourceProperties name="name" valueType="String" description="The full name of a person expressed as simple text string."/>
+      <resourceProperties name="givenName" valueType="String" description="Given name of person expressed as simple text string. "/>
+      <resourceProperties name="familyName" valueType="String" description="Family name of person expressed as simple text string. "/>
+    </domainSpecifications>
+    <domainSpecifications name="Change Management" namespaceURI="http://open-services.net/ns/cm#" namespacePrefix="//@specification/@domainPrefixes.3">
+      <resources name="ChangeRequest"/>
+    </domainSpecifications>
+    <domainSpecifications name="Requirements Management" namespaceURI="http://open-services.net/ns/rm#" namespacePrefix="//@specification/@domainPrefixes.4">
+      <resources name="RequirementCollection"/>
+      <resources name="Requirement"/>
+    </domainSpecifications>
+    <domainSpecifications name="OSLC Core" namespaceURI="http://open-services.net/ns/core#" namespacePrefix="//@specification/@domainPrefixes.6">
+      <resources name="ServiceProvider"/>
+      <resources name="ResourceShape" resourceProperties="//@specification/@domainSpecifications.1/@resourceProperties.8"/>
+      <resourceProperties name="serviceProvider" valueType="Resource" range="//@specification/@domainSpecifications.5/@resources.0" description="A link to the resource's OSLC Service Provider. There may be cases when the subject resource is available from a service provider that implements multiple domain specifications, which could result in multiple values for this property."/>
+      <resourceProperties name="instanceShape" valueType="Resource" range="//@specification/@domainSpecifications.5/@resources.1"/>
+      <resourceProperties name="shortTitle" valueType="XMLLiteral" description=""/>
+      <resourceProperties name="shortId" valueType="String"/>
+    </domainSpecifications>
+    <domainPrefixes name="oslc_qm"/>
+    <domainPrefixes name="dcterms"/>
+    <domainPrefixes name="foaf"/>
+    <domainPrefixes name="oslc_cm"/>
+    <domainPrefixes name="oslc_rm"/>
+    <domainPrefixes name="nsp6"/>
+    <domainPrefixes name="oslc"/>
+    <domainPrefixes name="nsp8"/>
+  </specification>
+</oslc4j_tc:Toolchain>
