@@ -46,6 +46,7 @@ import javax.ws.rs.core.UriBuilder;
 
 import org.eclipse.lyo.oslc4j.core.annotation.OslcAllowedValue;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcDescription;
+import org.eclipse.lyo.oslc4j.core.annotation.OslcMemberProperty;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcName;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcNamespace;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcOccurs;
@@ -196,27 +197,22 @@ public String toHtml(boolean asLocalResource)
 }
 
 
-   	@OslcName("product")
-   	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "product")
+	@OslcName("product")
+	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "product")
 	@OslcDescription("")
 	@OslcOccurs(Occurs.ExactlyOne)
 	@OslcValueType(ValueType.String)
-	
-	
 	@OslcReadOnly(false)
-	
     public String getProduct()
     {
         return product;
     }
 
-   	@OslcName("component")
-   	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "component")
+	@OslcName("component")
+	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "component")
 	@OslcDescription("The Bugzilla product definition for this change request.")
 	@OslcOccurs(Occurs.ZeroOrOne)
 	@OslcValueType(ValueType.String)
-	
-	
 	@OslcReadOnly(false)
 	@OslcTitle("Component")
     public String getComponent()
@@ -224,13 +220,11 @@ public String toHtml(boolean asLocalResource)
         return component;
     }
 
-   	@OslcName("version")
-   	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "version")
+	@OslcName("version")
+	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "version")
 	@OslcDescription("The Bugzilla version for this change request.")
 	@OslcOccurs(Occurs.ZeroOrOne)
 	@OslcValueType(ValueType.String)
-	
-	
 	@OslcReadOnly(true)
 	@OslcTitle("Version")
     public String getVersion()
@@ -238,13 +232,11 @@ public String toHtml(boolean asLocalResource)
         return version;
     }
 
-   	@OslcName("priority")
-   	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "priority")
+	@OslcName("priority")
+	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "priority")
 	@OslcDescription("The Bugzilla priority for this change request.")
 	@OslcOccurs(Occurs.ZeroOrOne)
 	@OslcValueType(ValueType.String)
-	
-	
 	@OslcReadOnly(false)
 	@OslcTitle("Priority")
     public String getPriority()
@@ -252,13 +244,11 @@ public String toHtml(boolean asLocalResource)
         return priority;
     }
 
-   	@OslcName("platform")
-   	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "platform")
+	@OslcName("platform")
+	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "platform")
 	@OslcDescription("The Bugzilla platform for this change request.")
 	@OslcOccurs(Occurs.ZeroOrOne)
 	@OslcValueType(ValueType.String)
-	
-	
 	@OslcReadOnly(false)
 	@OslcTitle("Platform")
     public String getPlatform()
@@ -266,13 +256,11 @@ public String toHtml(boolean asLocalResource)
         return platform;
     }
 
-   	@OslcName("operatingSystem")
-   	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "operatingSystem")
+	@OslcName("operatingSystem")
+	@OslcPropertyDefinition(BugzillaAdaptorConstants.BUGZILLA_NAMSPACE + "operatingSystem")
 	@OslcDescription("The Bugzilla operating system for this change request.")
 	@OslcOccurs(Occurs.ZeroOrOne)
 	@OslcValueType(ValueType.String)
-	
-	
 	@OslcReadOnly(false)
 	@OslcTitle("Operating System")
     public String getOperatingSystem()
@@ -481,7 +469,7 @@ public String toHtml(boolean asLocalResource)
     
     	s = s + "<label for=\"priority\">priority: </LABEL>";
     
-    	// Start of user code "Mid:priorityToHtmlForCreation1(...final String serviceProviderId)"\
+    	// Start of user code "Mid:priorityToHtmlForCreation1(...final String serviceProviderId)"
     	String label = s;
     	// End of user code
     

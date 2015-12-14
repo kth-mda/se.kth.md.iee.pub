@@ -75,7 +75,7 @@ public class ServiceProviderCatalogSingleton
         try
         {
             serviceProviderCatalog = new ServiceProviderCatalog();
-            
+
             //serviceProviderCatalog.setAbout(new URI(ServiceProviderRegistryURIs.getServiceProviderRegistryURI()));
             serviceProviderCatalog.setAbout(new URI(ServletListener.getServicesBase()+"/catalog/singleton"));
             serviceProviderCatalog.setTitle("OSLC Service Provider Catalog");
